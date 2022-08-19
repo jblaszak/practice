@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+        "nav nav nav nav nav"
+        ". main main aside ."
+        "footer footer footer footer footer";
+        grid-template-columns: 1fr 1fr minmax(100px, 1fr) 1fr 1fr;
+        grid-template-rows: min-content 1fr min-content;
+    margin: 0;
+}
+
+.navigation {
+    grid-area: nav;
+    margin: 10px;
+    position: sticky;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+nav ul li {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 1rem;
+}
+
+nav ul li:hover {
+    position: relative;
+    color: blue;
+    cursor: pointer;
+}
+
+nav ul li:hover::after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    background-color: blue;
+    transform: translateX(-100%) translateY(1.5rem);
+    width: 100%;
+}
+
+
+
+main {
+    grid-area: main;
+    max-width: 800px;
+    margin: 10px auto;
+}
+
+section {
+    grid-area: main;
+}
+
+aside {
+    grid-area: aside;
+}
+
+aside h2 {
+
+}
+
+article h1 {
+    margin: 1rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+footer {
+    grid-area: footer;
+    padding: 1rem;
+    justify-self: center;
+}
