@@ -14,6 +14,7 @@ This is a solution to the [Product preview card component challenge on Frontend 
     - [Built with](#built-with)
     - [What I learned](#what-i-learned)
   - [Author](#author)
+  - [Acknowledgements](#acknowledgements)
 
 
 ## Overview
@@ -57,3 +58,7 @@ A couple other things I learned:
 
 - Frontend Mentor - [@jblaszak](https://www.frontendmentor.io/profile/jblaszak)
 - Twitter - [@jblaszak](https://www.twitter.com/jblaszak)
+
+## Acknowledgements
+
+Thanks to @SHMITEnZ for info on the picture tag and @hazel79 for mentioning the 'overflow: hidden' effect on shorter screens!
