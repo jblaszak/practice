@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/jblaszak/practice/tree/main/frontendmentor/level-one/product-preview-card-component-main](https://github.com/jblaszak/practice/tree/main/frontendmentor/level-one/product-preview-card-component-main)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://jblaszak.github.io/practice/frontendmentor/level-one/product-preview-card-component-main/index.html](https://jblaszak.github.io/practice/frontendmentor/level-one/product-preview-card-component-main/index.html)
 
 ## My process
 
