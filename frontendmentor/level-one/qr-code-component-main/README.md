@@ -37,7 +37,7 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### What I learned
 
-
+Challenge was pretty simple, learned a bit more about CSS resets to get the page to show full height.  I did it more for time management practice to estimate how long it would take. Spent a little too much time fiddling trying to get sizing right.  Would have been much faster with some design files.
 
 ## Author
 
