@@ -1,0 +1,136 @@
+:root {
+    --dark-cyan: hsl(185, 75%, 39%);
+    --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+    --dark-grayish-blue: hsl(227, 10%, 46%);
+    --dark-gray: hsl(0, 0%, 59%);
+}
+
+/* resets */
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+img, picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* main */
+
+body {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 18px;
+    background-image: url('./images/bg-pattern-top.svg'), url('./images/bg-pattern-bottom.svg');
+    background-position: -20vw -50vh, 50vw 50vh;
+    background-repeat: no-repeat;
+    background-color: var(--dark-cyan);
+    /* overflow: hidden; */
+}
+
+@media (max-width: 600px) {
+    body {
+        background-position: -200vw -100vh, 45vw 50vh;
+    }
+}
+
+/* .bg-top {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transform: translateX(-25%) translateY(-50%);
+}
+
+.bg-bottom {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    right: 0;
+    transform: translateX(25%) translateY(50%);
+} */
+
+.profile-card {
+    margin: 1rem;
+    border-radius: 1rem;
+    background-color: white;
+    text-align: center;
+    width: 325px;
+    box-shadow: 0 1rem 6rem 0.25rem var(--dark-grayish-blue);
+}
+
+.card-background {
+    background-image: url('./images//bg-pattern-card.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 140px;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.card-contents {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-card picture {
+    position: absolute;
+    transform: translateY(-50%);
+}
+
+.profile-card picture img {
+    border: 0.5rem solid white;
+    border-radius: 50%;
+    width: 96px;
+    height: 96px;
+}
+
+.profile-card h1 {
+    margin-top: calc(48px + 1rem);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.age {
+    margin-left: 0.5rem;
+    color: var(--dark-grayish-blue);
+    font-weight: 400;
+}
+
+.location {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--dark-grayish-blue);
+}
+
+.stats {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    padding: 1.5rem;
+    border-top: 1px solid hsl(0, 0%, 85%);
+}
+
+.stat h2 {
+    font-size: 1rem;
+}
+
+.stat span {
+    font-size: 0.8rem;
+    color: var(--dark-gray);
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
