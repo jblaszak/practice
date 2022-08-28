@@ -34,10 +34,19 @@ This is a solution to the [Profile card component challenge on Frontend Mentor](
 
 - Semantic HTML5 markup
 - CSS custom properties
+- CSS Grid
+- CSS Flexbox
 
 ### What I learned
 
-
+This was a fun one. Using multiple backgrounds was new for me. It was more involved/challenging than the previous components, which was nice! 
+Had to use transformsfor position and box shadows as well! Had difficulty with the overall page background positioning. Looked at some other solutions for it and found a way that worked.  Also learned that 
+the CSS reset for img's was messing up the expected behaviour!  Had to reset this to 'initial'!
+``` css
+img {
+  max-width: 100%;
+} 
+```
 
 ## Author
 
