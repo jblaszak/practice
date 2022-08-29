@@ -34,7 +34,7 @@ This is a solution to the [NFT preview card component challenge on Frontend Ment
 
 ### What I learned
 
-More time management and alignment of items. Good simple one to practice output.
+Learned that ::before and ::after elements don't work with img's! More time management and alignment of items. More use of hover states. Otherwise good simple one to practice output.
 
 ## Author
 

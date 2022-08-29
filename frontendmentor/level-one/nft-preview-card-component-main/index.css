@@ -35,15 +35,44 @@ body {
     margin: 1rem;
 }
 
-.card > img {
+.card-image {
+    position: relative;
+}
+
+.card-image img {
+    display: block;
     max-width: 100%;
     border-radius: 0.5rem;
+}
+
+.card-image:hover {
+    cursor: pointer;
+}
+
+.card-image:hover::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5rem;
+    background-color: hsl(178, 100%, 50%, 50%);
+    background-image: url('./images/icon-view.svg');
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .card h1 {
     color: var(--white);
     font-size: 1.5rem;
     font-weight: 400;
+}
+
+.card h1:hover {
+    color: var(--cyan);
+    cursor: pointer;
 }
 
 .card p {
@@ -99,7 +128,12 @@ body {
 }
 
 .creator span {
-    color: white;
+    color: var(--white);
+}
+
+.creator span:hover {
+    color: var(--cyan);
+    cursor: pointer;
 }
 
 .attribution { font-size: 11px; text-align: center; }
