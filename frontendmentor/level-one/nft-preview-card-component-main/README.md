@@ -34,6 +34,7 @@ This is a solution to the [NFT preview card component challenge on Frontend Ment
 
 ### What I learned
 
+More time management and alignment of items. Good simple one to practice output.
 
 ## Author
 
