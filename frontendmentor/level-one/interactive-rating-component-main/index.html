@@ -3,27 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css" />
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Interactive rating component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-
+  <main>
+    <div class="rating-card">
+      <div class="star"></div>
+      <h1>How did we do?</h1>
+      <p>Please let us know how we did with your support request. All feedback is appreciated 
+        to help us improve our offering!</p>
+      <form>
+        <div class="ratings">
+          <label><input type="radio" id="1" name="rating" value="1"><span>1</span></label>
+          <label><input type="radio" id="2" name="rating" value="2"><span>2</span></label>
+          <label><input type="radio" id="3" name="rating" value="3"><span>3</span></label>
+          <label><input type="radio" id="4" name="rating" value="4"><span>4</span></label>
+          <label><input type="radio" id="5" name="rating" value="5"><span>5</span></label>
+        </div>
+        <button>Submit</button>
+      </form>
+    </div>
+    <div class="thank-you">
+      
+    </div>
+  </main>
   <!-- Rating state start -->
 
-  How did we do?
+  
 
-  Please let us know how we did with your support request. All feedback is appreciated 
-  to help us improve our offering!
+  
 
-  1 2 3 4 5
+  
 
   Submit
 
@@ -43,7 +60,7 @@
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Jo Blaszak</a>.
   </div>
 </body>
 </html>

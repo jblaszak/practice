@@ -1,0 +1,129 @@
+:root {
+    --orange: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(217, 12%, 63%);
+    --medium-grey: hsl(216, 12%, 54%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+}
+
+/* resets */
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+/* main */
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Overpass', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    background-color: black;
+}
+
+.rating-card {
+    background-color: var(--very-dark-blue);
+    border-radius: 1.5rem;
+    margin: 1.5rem;
+    padding: 1.5rem;
+}
+
+.star {
+    border-radius: 50%;
+    background-image: url('./images/icon-star.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--dark-blue);
+    width: 3rem;
+    height: 3rem;
+}
+
+.rating-card h1 {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.rating-card p {
+    color: var(--medium-grey);
+    font-size: 0.85rem;
+    line-height: 1.25rem;
+}
+
+.ratings {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+}
+
+.ratings label {
+    color: var(--light-grey);
+    display: inline-grid;
+    grid-template-areas: "label";
+}
+
+.ratings input {
+    margin: 0;
+    padding: 0;
+    width: 3rem;
+    height: 3rem;
+    grid-area: label;
+    appearance: none;
+    border-radius: 50%;
+    background-color: var(--dark-blue);
+}
+.ratings label:hover,
+.ratings label:hover input {
+    cursor: pointer;
+}
+
+.ratings label:hover input,
+.ratings label input:checked:hover {
+    background-color: var(--orange);
+}
+
+.ratings label span {
+    grid-area: label;
+    align-self: center;
+    justify-self: center;
+}
+
+.ratings label:hover span,
+.ratings label input:checked + span {
+    color: white;
+}
+
+.ratings input:checked {
+    background-color: var(--medium-grey);
+}
+
+.rating-card button {
+    font-family: inherit;
+    font-size: 0.8rem;
+    letter-spacing: 0.15ch;
+    vertical-align: text-bottom;
+    width: 100%;
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 0.75rem;
+    margin: 0;
+    border-radius: 1.5rem;
+    text-transform: uppercase;
+}
+
+.rating-card button:hover {
+    background-color: var(--white);
+    color: var(--orange);
+    cursor: pointer;
+}
+
+
+.attribution { font-size: 11px; text-align: center; color: var(--white);}
+.attribution a { color: hsl(228, 45%, 44%); }
