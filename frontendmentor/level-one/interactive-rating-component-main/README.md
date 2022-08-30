@@ -31,10 +31,12 @@ This is a solution to the [Interactive rating component challenge on Frontend Me
 
 - Semantic HTML5 markup
 - CSS custom properties
+- Flexbox
+- Vanilla Javascript
 
 ### What I learned
 
-
+Learned more about DOM manipulation with javascript and styling radio buttons!  Also implemented some more semantic tags and aria labels. Had some challenges with positioning of text a lower baseline, could set more padding but that is inconsistent when there's more than one line. Will need to find a better solution to this.
 
 ## Author
 
