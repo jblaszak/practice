@@ -10,7 +10,9 @@ const submitHandler = (event) => {
   thanksIllustration.ariaHidden = true;
   card.prepend(thanksIllustration);
 
-  const ratingValue = new URLSearchParams(window.location.search).get("rating");
+  const formData = new FormData(event.target);
+  const formProps = Object.fromEntries(formData);
+  const ratingValue = formProps.rating;
 
   const rating = document.getElementsByClassName("star")[0];
   rating.classList.remove("star");

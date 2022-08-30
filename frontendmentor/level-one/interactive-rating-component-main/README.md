@@ -18,7 +18,9 @@ This is a solution to the [Interactive rating component challenge on Frontend Me
 ### Screenshot
 
 ![Mobile Screenshot](./screenshot-mobile.png)
+![Mobile Thanks State Screenshot](./screenshot-mobile-thanks.png)
 ![Desktop Screenshot](./screenshot-desktop.PNG)
+![Desktop Thanks State Screenshot](./screenshot-desktop-thanks.PNG)
 
 ### Links
 
