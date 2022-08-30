@@ -132,13 +132,19 @@ body {
     border: none;
     border-radius: 1.5rem;
     text-transform: uppercase;
-    /* -webkit-appearance: none; */
 }
 
 .rating-card button:hover {
     background-color: var(--white);
     color: var(--orange);
     cursor: pointer;
+}
+
+.rating-card button:disabled,
+.rating-card button:disabled:hover {
+    background-color: var(--light-grey);
+    color: var(--white);
+    cursor: not-allowed;
 }
 
 /* second view */
