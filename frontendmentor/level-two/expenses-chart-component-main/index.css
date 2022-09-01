@@ -1,0 +1,161 @@
+:root {
+    --soft-red: hsl(10, 79%, 65%);
+    --cyan: hsl(186, 34%, 60%);
+    --dark-brown: hsl(25, 47%, 15%);
+    --medium-brown: hsl(28, 10%, 53%);
+    --very-pale-orange: hsl(33, 100%, 98%);
+}
+
+/* resets */
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+/* main */
+body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--very-pale-orange);
+}
+
+.budget-card {
+    margin: 1rem;
+    width: 350px;
+}
+
+.balance {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--soft-red);
+    border-radius: 1rem;
+    padding: 1rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.balance h2 {
+    margin: 0.5rem 0 0 0;
+    padding: 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.balance p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.balance img {
+    height: 36px;
+}
+
+.spending {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.spending h2 {
+    color: var(--dark-brown);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+.daily-chart {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-content: space-between;
+    align-items: flex-end;
+    color: var(--medium-brown);
+    font-size: 0.8rem;
+}
+
+.daily-chart li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.daily-chart li span:first-child {
+    display: block;
+    background-color: black;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: white;
+    visibility: hidden;
+}
+
+.daily-chart li span:nth-child(2) {
+    display: block;
+    border-radius: 5px;
+    width: 80%;
+    height: 100px;
+    background-color: var(--soft-red);
+    margin: 0.5rem 0 0.25rem 0;
+}
+
+.today {
+    background-color: var(--cyan);
+}
+
+.daily-chart li:hover span:first-child {
+    visibility: visible;
+}
+
+.daily-chart li:hover span:nth-child(2) {
+    filter: brightness(120%);
+}
+
+.totals {
+    margin: 0;
+    padding: 1rem 0 0.5rem 0;
+    border-top: 3px solid var(--very-pale-orange);
+}
+
+.totals h2 {
+    color: var(--medium-brown);
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+.totals ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--dark-brown);
+}
+
+.totals ul li:first-child {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.totals ul li:last-child {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-align: right;
+}
+.totals ul li:last-child span {
+    display: block;
+    color: var(--medium-brown);
+    font-weight: 400;
+}
