@@ -29,6 +29,7 @@ Users should be able to:
 ### Screenshot
 
 ![Mobile Screenshot](./screenshot-mobile.png)
+![Mobile Active States Screenshot](./screenshot-mobile-active.png)
 ![Desktop Screenshot](./screenshot-desktop.PNG)
 
 ### Links
@@ -43,11 +44,12 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
+- Grid
 - Vanilla Javascript
 
 ### What I learned
 
-
+Cool project, started incorporating more javascript to make dynamic content and loading data from a local JSON file.  Used some filters to adjust brightness levels on hover.  Added classes and HTML elements to the DOM using JS.  Also learned more about CSS and specificity to target elements where class was added.
 
 ## Author
 

@@ -3,7 +3,7 @@
     --cyan: hsl(186, 34%, 60%);
     --dark-brown: hsl(25, 47%, 15%);
     --medium-brown: hsl(28, 10%, 53%);
-    --very-pale-orange: hsl(33, 100%, 98%);
+    --very-pale-orange: hsl(33, 100%, 93%);
 }
 
 /* resets */
@@ -16,6 +16,7 @@ body {
     font-family: 'DM Sans', sans-serif;
     font-size: 18px;
     font-weight: 400;
+    height: 100vh;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -81,9 +82,11 @@ body {
     align-items: flex-end;
     color: var(--medium-brown);
     font-size: 0.8rem;
+    margin-top: 3rem;
 }
 
 .daily-chart li {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,6 +94,8 @@ body {
 }
 
 .daily-chart li span:first-child {
+    position: absolute;
+    top: -2rem;
     display: block;
     background-color: black;
     padding: 0.5rem;
@@ -102,13 +107,12 @@ body {
 .daily-chart li span:nth-child(2) {
     display: block;
     border-radius: 5px;
-    width: 80%;
-    height: 100px;
+    width: 75%;
     background-color: var(--soft-red);
     margin: 0.5rem 0 0.25rem 0;
 }
 
-.today {
+.daily-chart li span[class="today"] {
     background-color: var(--cyan);
 }
 
@@ -117,7 +121,7 @@ body {
 }
 
 .daily-chart li:hover span:nth-child(2) {
-    filter: brightness(120%);
+    filter: brightness(125%);
 }
 
 .totals {
@@ -154,8 +158,12 @@ body {
     font-weight: 700;
     text-align: right;
 }
+
 .totals ul li:last-child span {
     display: block;
     color: var(--medium-brown);
     font-weight: 400;
 }
+
+.attribution { font-size: 11px; text-align: center; color: var(--white);}
+.attribution a { color: hsl(228, 45%, 44%); }
