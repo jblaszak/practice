@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/jblaszak/practice/tree/main/frontendmentor/level-one/expenses-chart-component-main](https://github.com/jblaszak/practice/tree/main/frontendmentor/level-one/expenses-chart-component-main)
-- Live Site URL: [https://jblaszak.github.io/practice/frontendmentor/level-one/expenses-chart-component-main/index.html](https://jblaszak.github.io/practice/frontendmentor/level-one/expenses-chart-component-main/index.html)
+- Solution URL: [https://github.com/jblaszak/practice/tree/main/frontendmentor/level-two/expenses-chart-component-main](https://github.com/jblaszak/practice/tree/main/frontendmentor/level-two/expenses-chart-component-main)
+- Live Site URL: [https://jblaszak.github.io/practice/frontendmentor/level-two/expenses-chart-component-main/index.html](https://jblaszak.github.io/practice/frontendmentor/level-two/expenses-chart-component-main/index.html)
 
 ## My process
 
