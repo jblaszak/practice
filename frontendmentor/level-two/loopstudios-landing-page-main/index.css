@@ -30,19 +30,15 @@ picture {
 
 /* main */
 
-body {
+html {
   font-family: "Alata", sans-serif;
   font-size: 15px;
   font-weight: 400;
 }
 
-.gutter {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
 .navigation {
   position: absolute;
+  z-index: 100;
   width: 100%;
   max-width: 1000px;
   padding: 2rem 1rem;
@@ -51,10 +47,40 @@ body {
   align-items: center;
 }
 
+.menu-dropdown {
+  appearance: none;
+  width: 2rem;
+  height: 2rem;
+  background-image: url("./images/icon-hamburger.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.menu-dropdown:checked {
+  background-image: url("./images/icon-close.svg");
+}
+
 .nav-links {
-  display: flex;
+  display: none;
+  flex-direction: column;
   list-style: none;
   column-gap: 1rem;
+}
+
+.menu-dropdown:checked + .nav-links {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  padding-left: 1rem;
+  gap: 1.5rem;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--black);
 }
 
 .nav-link {
@@ -79,6 +105,24 @@ body {
 
 .nav-link:hover::after {
   width: 50%;
+}
+
+.menu-dropdown:checked + .nav-links .nav-link {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+@media (min-width: 600px) {
+  .menu-dropdown {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .hero {
@@ -110,7 +154,7 @@ body {
 
   .hero h2 {
     margin-top: 5rem;
-    max-width: 50%;
+    width: 500px;
     font-size: 4rem;
   }
 }
@@ -129,14 +173,41 @@ article h2 {
 .leaders h2 {
   margin: 3rem 0 1rem 0;
 }
+
 .leaders p {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: var(--dark-grey);
 }
 
 .leaders section {
   background: var(--white);
   text-align: center;
+}
+
+@media (min-width: 600px) {
+  .leaders {
+    display: grid;
+    grid-template-areas: "content";
+  }
+
+  .leaders picture {
+    grid-area: content;
+  }
+
+  .leaders h2 {
+    font-size: clamp(2rem, 0.875rem + 2.8125vw, 2.75rem);
+    margin-top: 0;
+  }
+
+  .leaders section {
+    grid-area: content;
+    justify-self: end;
+    align-self: end;
+    width: clamp(400px, 250px + 25vw, 500px);
+    padding-top: clamp(2rem, -4rem + 15vw, 6rem);
+    padding-left: clamp(2rem, -4rem + 15vw, 6rem);
+    text-align: left;
+  }
 }
 
 .creations {
@@ -148,7 +219,8 @@ article h2 {
 }
 
 .creations h2 {
-  text-align: center;
+  grid-area: title;
+  justify-self: center;
   margin-bottom: 2rem;
 }
 
@@ -221,6 +293,7 @@ article h2 {
 }
 
 .see-all {
+  grid-area: more;
   justify-self: center;
   text-decoration: none;
   padding: 0.5rem 3rem;
@@ -228,11 +301,36 @@ article h2 {
   color: var(--black);
   border: 2px solid var(--black);
   font-weight: 400;
+  transition: color 0.5s, background-color 0.5s;
 }
 
 .see-all:hover {
   color: var(--white);
   background-color: var(--black);
+}
+
+@media (min-width: 600px) {
+  .creations {
+    grid-template-areas:
+      "title more"
+      "list list";
+  }
+
+  .creations h2 {
+    justify-self: start;
+    align-self: center;
+    margin-bottom: 0;
+  }
+
+  .creations-list {
+    margin-top: 3rem;
+  }
+
+  .see-all {
+    align-self: center;
+    justify-self: end;
+    margin-top: 0;
+  }
 }
 
 footer {
