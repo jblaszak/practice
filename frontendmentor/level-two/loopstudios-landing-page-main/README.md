@@ -1,11 +1,13 @@
 # Frontend Mentor - Loopstudios landing page solution
 
-This is a solution to the [Loopstudios landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/loopstudios-landing-page-N88J5Onjw). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Loopstudios landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/loopstudios-landing-page-N88J5Onjw). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
+- [Frontend Mentor - Loopstudios landing page solution](#frontend-mentor---loopstudios-landing-page-solution)
+  - [Table of contents](#table-of-contents)
   - [Overview](#overview)
-    - [The Challenge](#the-challenge);
+    - [The challenge](#the-challenge)
     - [Screenshot](#screenshot)
     - [Links](#links)
   - [My process](#my-process)
@@ -41,10 +43,12 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - Grid
-- Vanilla Javascript
 
 ### What I learned
 
+Learned more about CSS grid and alignment of elements on the page! Also changing layout of elements on different screen sizes. Learned how to center an absolutely positioned element! Some parts felt a bit hacky and inconsistent across the page so will need some better solutions. Things would have been solved easier with an extra div but was trying to solve it using only meaningful, semantic tags.
+
+Also realized that for a landing page with many components like this, it starts making much more sense to use a framework like Astro to organize relevant bits of code into smaller chunks.
 
 ## Author
 
