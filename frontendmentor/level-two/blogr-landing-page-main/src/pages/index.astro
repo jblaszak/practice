@@ -1,0 +1,141 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Frontend Mentor | [Blogr]">
+	Product
+
+	Overview
+	Pricing
+	Marketplace
+	Features
+	Integrations
+  
+	Company
+  
+	About
+	Team
+	Blog
+	Careers
+  
+	Connect
+  
+	Contact
+	Newsletter
+	LinkedIn
+	
+	Login
+	Sign Up
+  
+	A modern publishing platform
+	Grow your audience and build your online brand
+  
+	Start for Free
+	Learn More
+  
+	Designed for the future
+  
+	Introducing an extensible editor
+	Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. 
+	The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, 
+	videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or 
+	change the looks of a blog.
+  
+	Robust content management
+	Flexible content management enables users to easily move through posts. Increase the usability of your blog 
+	by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.
+  
+	State of the Art Infrastructure
+	With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. 
+	This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
+  
+	Free, open, simple
+	Blogr is a free and open source application backed by a large community of helpful developers. It supports 
+	features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, 
+	and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.
+  
+	Powerful tooling
+	Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
+	capable of producing even the most complicated sites.
+  
+	Product
+  
+	Overview
+	Pricing
+	Marketplace
+	Features
+	Integrations
+  
+	Company
+  
+	About
+	Team
+	Blog
+	Careers
+  
+	Connect
+	
+	Contact
+	Newsletter
+	LinkedIn
+</Layout>
+
+<style>
+	:root {
+		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+	}
+
+	h1 {
+		margin: 2rem 0;
+	}
+
+	main {
+		margin: auto;
+		padding: 1em;
+		max-width: 60ch;
+	}
+
+	.text-gradient {
+		font-weight: 900;
+		background-image: var(--astro-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 100% 200%;
+		background-position-y: 100%;
+		border-radius: 0.4rem;
+		animation: pulse 4s ease-in-out infinite;
+	}
+
+	@keyframes pulse {
+		0%,
+		100% {
+			background-position-y: 0%;
+		}
+		50% {
+			background-position-y: 80%;
+		}
+	}
+
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		background: #4f39fa;
+		padding: 1rem;
+		border-radius: 0.4rem;
+		color: var(--color-bg);
+	}
+
+	.instructions code {
+		font-size: 0.875em;
+		border: 0.1em solid var(--color-border);
+		border-radius: 4px;
+		padding: 0.15em 0.25em;
+	}
+
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+</style>
