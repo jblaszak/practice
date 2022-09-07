@@ -1,0 +1,25 @@
+nav {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 4rem;
+  background-color: black;
+}
+
+.hamburger {
+  appearance: none;
+  background-color: transparent;
+  width: 64px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  padding-left: 0;
+}
