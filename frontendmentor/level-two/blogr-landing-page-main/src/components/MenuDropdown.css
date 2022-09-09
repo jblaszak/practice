@@ -1,0 +1,38 @@
+.dropdown {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dropdown span::after {
+  content: url("../../images/icon-arrow-dark.svg");
+  padding-left: 0.5ch;
+}
+
+.dropdown ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  gap: 1rem;
+  margin: 1rem;
+  background-color: var(--color-very-light-grayish-blue);
+  border-radius: 0.5rem;
+}
+
+.dropdown li {
+  flex-basis: 100%;
+  padding-left: 0;
+  /* margin: 1rem; */
+}
+
+.dropdown a {
+  text-decoration: none;
+  padding: 0.5rem 0;
+  width: 100%;
+  color: var(--color-very-dark-grayish-blue);
+}
