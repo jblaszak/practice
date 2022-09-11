@@ -11,6 +11,7 @@
   --gradient-light-red: hsl(353, 100%, 62%);
   --gradient-very-dark-gray-blue: hsl(237, 17%, 21%);
   --gradient-very-dark-desaturated-blue: hsl(237, 23%, 32%);
+  --max-width: 1000px;
 }
 
 *,

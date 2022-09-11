@@ -1,20 +1,39 @@
+header {
+  width: 100%;
+}
+
 nav {
   position: absolute;
-  width: 100%;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 4rem;
+  padding: 2rem 1rem;
+  margin: 0 auto;
+  max-width: calc(var(--max-width) + 1rem);
   background-color: black;
 }
 
 .hamburger {
   appearance: none;
   background-color: transparent;
-  width: 64px;
   height: 36px;
   cursor: pointer;
   border: none;
+  padding: 0;
+}
+
+.menu-container {
+  display: none;
+  position: absolute;
+  top: 6rem;
+  left: 0;
+  right: 0;
+  padding: 0 1rem;
+  margin: 0 1rem;
+  background-color: white;
+  border-radius: 5px;
 }
 
 .menu {
@@ -25,30 +44,51 @@ nav {
   padding-left: 0;
 }
 
-.menu-container {
-  position: absolute;
-  top: 4rem;
-  left: 0;
-  right: 0;
-  margin: 0 1rem;
-  padding: 0 1rem;
-  background-color: white;
-  border-radius: 5px;
+.menuOpen {
+  display: unset;
 }
 
 .credentials-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
   border-top: 1px solid var(--color-grayish-blue);
-  padding: 1rem 0;
+  padding: 1.5rem 0;
 }
 
 .credentials-container a:any-link {
-  display: block;
+  max-width: fit-content;
   text-decoration: none;
   text-align: center;
 }
 
 .credentials-container a {
-  color: var(--color-very-dark-grayish-blue);
+  color: var(--color-very-dark-gray-blue);
   font-size: 1rem;
   font-weight: 700;
+}
+
+.credentials-container a:hover {
+  color: var(--color-very-dark-grayish-blue);
+}
+
+.signup[class="signup"] {
+  color: white;
+  border-radius: 5rem;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(90deg, var(--gradient-very-light-red), var(--gradient-light-red));
+  background-size: 100% 100%;
+  transition: 0.5s;
+}
+
+.signup[class="signup"]:hover {
+  color: white;
+  background-size: 200% 200%;
+}
+
+@media (min-width: 600px) {
+  .hamburger {
+    display: none;
+  }
 }

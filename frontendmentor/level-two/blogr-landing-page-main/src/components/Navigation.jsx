@@ -36,39 +36,41 @@ export default function Navigation() {
   ];
 
   return (
-    <nav aria-label="top">
-      <a href="#" aria-label="Blogr Home Page">
-        <img src="../../images/logo.svg" alt="" />
-      </a>
-      <button className="hamburger" onClick={() => setMenuOpen((prev) => !prev)}>
-        <span className="sr-only">Open main menu</span>
-        <img
-          src={menuOpen ? "../../images/icon-close.svg" : "../../images/icon-hamburger.svg"}
-          alt=""
-          aria-hidden="true"
-        />
-      </button>
-      <div className="menu-container">
-        <ul className="menu">
-          {menuDropdowns.map((dropdown) => {
-            return (
-              <MenuDropdown
-                key={dropdown.category}
-                category={dropdown.category}
-                items={dropdown.items}
-              />
-            );
-          })}
-        </ul>
-        <div className="credentials-container">
-          <a href="#" aria-label="Login">
-            Login
-          </a>
-          <a href="#" aria-label="Signup">
-            Sign Up
-          </a>
+    <header>
+      <nav aria-label="top">
+        <a href="#" aria-label="Blogr Home Page">
+          <img src="../../images/logo.svg" alt="" />
+        </a>
+        <button className="hamburger" onClick={() => setMenuOpen((prev) => !prev)}>
+          <span className="sr-only">Open main menu</span>
+          <img
+            src={menuOpen ? "../../images/icon-close.svg" : "../../images/icon-hamburger.svg"}
+            alt=""
+            aria-hidden="true"
+          />
+        </button>
+        <div className={`menu-container${menuOpen ? " menuOpen" : ""}`}>
+          <ul className="menu">
+            {menuDropdowns.map((dropdown) => {
+              return (
+                <MenuDropdown
+                  key={dropdown.category}
+                  category={dropdown.category}
+                  items={dropdown.items}
+                />
+              );
+            })}
+          </ul>
+          <div className="credentials-container">
+            <a href="#" aria-label="Login">
+              Login
+            </a>
+            <a className="signup" href="#" aria-label="Signup">
+              Sign Up
+            </a>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }
