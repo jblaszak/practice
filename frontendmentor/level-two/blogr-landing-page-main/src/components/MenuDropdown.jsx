@@ -1,11 +1,21 @@
 import "./MenuDropdown.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function MenuDropdown({ category, items }) {
   const [open, setOpen] = useState(false);
 
+  const dropdownRef = useRef(null);
+
+  if (typeof window !== "undefined") {
+    document.addEventListener("mousedown", (e) => {
+      if (dropdownRef.current && open && !dropdownRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    });
+  }
+
   return (
-    <li className={`dropdown${open ? " open" : ""}`}>
+    <li className={`dropdown${open ? " open" : ""}`} ref={dropdownRef}>
       <span onClick={() => setOpen((prev) => !prev)}>{category}</span>
       <ul>
         {items.map((item) => {
