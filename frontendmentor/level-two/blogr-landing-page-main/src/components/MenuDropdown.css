@@ -77,3 +77,54 @@
 .open span::after {
   transform: rotate(180deg);
 }
+
+@media (min-width: 600px) {
+  .dropdown {
+    position: relative;
+    margin: 0 0.5rem;
+    font-weight: 400;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .dropdown span {
+    margin-bottom: 0;
+  }
+
+  .dropdown span:hover {
+    color: white;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  .dropdown span::after {
+    content: url("../../images/icon-arrow-light.svg");
+  }
+
+  .dropdown ul {
+    position: absolute;
+    left: -1.5rem;
+    top: 2rem;
+    width: 150px;
+    margin: 0;
+    background-color: white;
+  }
+
+  .dropdown a:hover {
+    font-weight: 700;
+  }
+
+  .dropdown li {
+    padding: 0.5rem 1rem;
+  }
+
+  .open span {
+    color: white;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  .open ul {
+    padding: 1rem 0;
+  }
+}

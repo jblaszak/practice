@@ -38,7 +38,6 @@ nav {
 
 .menu {
   display: grid;
-  flex-direction: column;
   align-items: center;
   list-style: none;
   padding-left: 0;
@@ -61,6 +60,7 @@ nav {
   max-width: fit-content;
   text-decoration: none;
   text-align: center;
+  white-space: nowrap;
 }
 
 .credentials-container a {
@@ -88,7 +88,57 @@ nav {
 }
 
 @media (min-width: 600px) {
+  nav {
+    justify-content: normal;
+  }
+
   .hamburger {
     display: none;
+  }
+
+  .menu-container {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: space-between;
+    position: static;
+    background-color: transparent;
+    flex-direction: row;
+    color: white;
+    top: unset;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu {
+    display: flex;
+    margin: 0 0 0 2rem;
+  }
+
+  .credentials-container {
+    border-top: unset;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .credentials-container a {
+    font-weight: 400;
+  }
+
+  .credentials-container a:hover {
+    color: white;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  .signup[class="signup"] {
+    color: var(--gradient-light-red);
+    background: white;
+    font-weight: 700;
+  }
+
+  .signup[class="signup"]:hover {
+    color: white;
+    background: var(--color-white-opacity);
+    text-decoration: none;
   }
 }

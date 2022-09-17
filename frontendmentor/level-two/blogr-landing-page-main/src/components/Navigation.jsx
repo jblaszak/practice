@@ -49,7 +49,7 @@ export default function Navigation() {
             aria-hidden="true"
           />
         </button>
-        <div className={`menu-container${menuOpen ? " menuOpen" : ""}`}>
+        <div className={`${menuOpen ? "menuOpen " : ""}menu-container`}>
           <ul className="menu">
             {menuDropdowns.map((dropdown) => {
               return (
