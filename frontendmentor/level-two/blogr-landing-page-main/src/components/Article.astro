@@ -1,0 +1,33 @@
+---
+import './Article.css'
+
+export interface Props {
+	title: string;
+	primaryTitle: string;
+	primaryText: string;
+    secondaryTitle: string;
+    secondaryText: string;
+    image: string;
+    imageDesktop: string;
+    imageAlt: string;
+    leftAligned: boolean;
+}
+
+const { title, primaryTitle, primaryText, secondaryTitle, secondaryText, image, imageDesktop, imageAlt, leftAligned } = Astro.props;
+---
+
+<article class={`article${leftAligned ? " left" : " right"}`}>
+    {title && <h1>{title}</h1>}
+    <section class="primary">
+        <h2>{primaryTitle}</h2>
+        <p>{primaryText}</p>
+    </section>
+    <section class="secondary">
+        <h2>{secondaryTitle}</h2>
+        <p>{secondaryText}</p>
+    </section>
+    <picture>
+        <source media="(min-width: 600px)" srcset={imageDesktop}/>
+        <img src={image} alt={imageAlt} />
+    </picture>
+</article>
