@@ -17,17 +17,19 @@ const { title, primaryTitle, primaryText, secondaryTitle, secondaryText, image, 
 ---
 
 <article class={`article${leftAligned ? " left" : " right"}`}>
-    {title && <h1>{title}</h1>}
-    <section class="primary">
-        <h2>{primaryTitle}</h2>
-        <p>{primaryText}</p>
-    </section>
-    <section class="secondary">
-        <h2>{secondaryTitle}</h2>
-        <p>{secondaryText}</p>
-    </section>
-    <picture>
-        <source media="(min-width: 600px)" srcset={imageDesktop}/>
-        <img src={image} alt={imageAlt} />
-    </picture>
+    <div>
+        {title && <h1>{title}</h1>}
+        <section class="primary">
+            <h2>{primaryTitle}</h2>
+            <p>{primaryText}</p>
+        </section>
+        <section class="secondary">
+            <h2>{secondaryTitle}</h2>
+            <p>{secondaryText}</p>
+        </section>
+        <picture>
+            <source srcset={imageDesktop} media="(min-width:600px)" />
+            <img src={image} alt={imageAlt} />
+        </picture>
+    </div>
 </article>
