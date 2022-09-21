@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Navigation.css";
+import * as styles from "./Navigation.module.css";
 import MenuDropdown from "./MenuDropdown";
 
 export default function Navigation() {
@@ -41,7 +41,7 @@ export default function Navigation() {
         <a href="#" aria-label="Blogr Home Page">
           <img src="../../images/logo.svg" alt="" />
         </a>
-        <button className="hamburger" onClick={() => setMenuOpen((prev) => !prev)}>
+        <button className={styles.hamburger} onClick={() => setMenuOpen((prev) => !prev)}>
           <span className="sr-only">Open main menu</span>
           <img
             src={menuOpen ? "../../images/icon-close.svg" : "../../images/icon-hamburger.svg"}
@@ -49,8 +49,8 @@ export default function Navigation() {
             aria-hidden="true"
           />
         </button>
-        <div className={`${menuOpen ? "menuOpen " : ""}menu-container`}>
-          <ul className="menu">
+        <div className={`${menuOpen ? styles.menuOpen : ""} ${styles.menuContainer}`}>
+          <ul className={styles.menu}>
             {menuDropdowns.map((dropdown) => {
               return (
                 <MenuDropdown
@@ -61,11 +61,11 @@ export default function Navigation() {
               );
             })}
           </ul>
-          <div className="credentials-container">
+          <div className={styles.credentialsContainer}>
             <a href="#" aria-label="Login">
               Login
             </a>
-            <a className="signup" href="#" aria-label="Signup">
+            <a className={styles.signup} href="#" aria-label="Signup">
               Sign Up
             </a>
           </div>

@@ -1,4 +1,4 @@
-import "./MenuDropdown.css";
+import * as styles from "./MenuDropdown.module.css";
 import { useState, useRef } from "react";
 
 export default function MenuDropdown({ category, items }) {
@@ -15,7 +15,7 @@ export default function MenuDropdown({ category, items }) {
   }
 
   return (
-    <li className={`dropdown${open ? " open" : ""}`} ref={dropdownRef}>
+    <li className={`${styles.dropdown}${open ? ` ${styles.open}` : ""}`} ref={dropdownRef}>
       <span onClick={() => setOpen((prev) => !prev)}>{category}</span>
       <ul>
         {items.map((item) => {

@@ -6,6 +6,11 @@
   margin: 6rem 0;
 }
 
+div {
+  display: grid;
+  place-items: center;
+}
+
 h1,
 h2 {
   font-size: 1.75rem;
@@ -37,40 +42,79 @@ img {
 }
 
 @media (min-width: 600px) {
-  .left {
-    grid-template-areas:
-      "title title"
-      "primary image"
-      "secondary image";
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .right {
-    grid-template-areas:
-      "title title"
-      "image primary"
-      "image secondary";
-    grid-template-columns: 1fr 1fr;
-  }
-
   .article {
+    grid-template-columns:
+      [full-start] minmax(1rem, 1fr)
+      [main-start] minmax(0, var(--max-width))
+      [main-end] minmax(1rem, 1fr)
+      [full-end];
+    margin: 4rem 0;
+    overflow-x: hidden;
     text-align: left;
   }
 
+  div {
+    grid-column: main;
+    grid-row: 1/2;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+
   h1 {
-    grid-area: title;
+    grid-column: 1/3;
+    grid-row: 1/2;
+    font-size: 2rem;
+    place-self: center;
   }
 
-  .primary {
-    grid-area: primary;
+  h2 {
+    font-size: 1.5rem;
   }
 
-  .secondary {
-    grid-area: secondary;
+  p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin: 0;
   }
 
   picture {
-    grid-area: image;
-    order: 0;
+    position: relative;
+    z-index: -1;
+    grid-column: 1/3;
+    grid-row: 1/5;
+    margin: 0;
+  }
+
+  .primary {
+    grid-row: 2/3;
+    align-self: start;
+  }
+
+  .secondary {
+    grid-row: 3/4;
+    align-self: end;
+  }
+
+  img {
+    position: relative;
+    z-index: -1;
+  }
+
+  .left .primary,
+  .left .secondary {
+    grid-column: 1/2;
+  }
+
+  .left img {
+    right: -35vw;
+  }
+
+  .right .primary,
+  .right .secondary {
+    grid-column: 2/3;
+  }
+
+  .right img {
+    left: -35vw;
   }
 }

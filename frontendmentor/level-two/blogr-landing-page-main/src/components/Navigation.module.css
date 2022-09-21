@@ -24,7 +24,7 @@ nav {
   padding: 0;
 }
 
-.menu-container {
+.menuContainer {
   display: none;
   position: absolute;
   top: 6rem;
@@ -47,7 +47,7 @@ nav {
   display: unset;
 }
 
-.credentials-container {
+.credentialsContainer {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -56,24 +56,24 @@ nav {
   padding: 1.5rem 0;
 }
 
-.credentials-container a:any-link {
+.credentialsContainer a:any-link {
   max-width: fit-content;
   text-decoration: none;
   text-align: center;
   white-space: nowrap;
 }
 
-.credentials-container a {
+.credentialsContainer a {
   color: var(--color-very-dark-gray-blue);
   font-size: 1rem;
   font-weight: 700;
 }
 
-.credentials-container a:hover {
+.credentialsContainer a:hover {
   color: var(--color-very-dark-grayish-blue);
 }
 
-.signup[class="signup"] {
+.signup[class*="signup"] {
   color: white;
   border-radius: 5rem;
   padding: 0.75rem 2rem;
@@ -82,7 +82,7 @@ nav {
   transition: 0.5s;
 }
 
-.signup[class="signup"]:hover {
+.signup[class*="signup"]:hover {
   color: white;
   background-size: 200% 200%;
 }
@@ -96,7 +96,7 @@ nav {
     display: none;
   }
 
-  .menu-container {
+  .menuContainer {
     display: flex;
     flex-basis: 100%;
     justify-content: space-between;
@@ -114,29 +114,29 @@ nav {
     margin: 0 0 0 2rem;
   }
 
-  .credentials-container {
+  .credentialsContainer {
     border-top: unset;
     flex-direction: row;
     padding: 0;
   }
 
-  .credentials-container a {
+  .credentialsContainer a {
     font-weight: 400;
   }
 
-  .credentials-container a:hover {
+  .credentialsContainer a:hover {
     color: white;
     font-weight: 700;
     text-decoration: underline;
   }
 
-  .signup[class="signup"] {
+  .signup[class*="signup"] {
     color: var(--gradient-light-red);
     background: white;
     font-weight: 700;
   }
 
-  .signup[class="signup"]:hover {
+  .signup[class*="signup"]:hover {
     color: white;
     background: var(--color-white-opacity);
     text-decoration: none;

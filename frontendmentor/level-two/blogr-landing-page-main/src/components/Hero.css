@@ -1,5 +1,5 @@
 .hero {
-  padding: 10rem 1.5rem 8rem 1.5rem;
+  padding: 10rem 1rem 8rem 1rem;
   background: url("../../images/bg-pattern-intro-mobile.svg"),
     linear-gradient(180deg, var(--gradient-very-light-red) 0%, var(--gradient-light-red) 100%);
   background-repeat: no-repeat;
@@ -10,22 +10,13 @@
   border-bottom-left-radius: 5rem;
 }
 
-@media (min-width: 600px) {
-  .hero {
-    background: url("../../images/bg-pattern-intro-desktop.svg"),
-      linear-gradient(90deg, var(--gradient-very-light-red) 0%, var(--gradient-light-red) 100%);
-    background-position: 27% 52%;
-    background-size: unset;
-  }
-}
-
 .hero h1 {
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: 400;
 }
 
 .hero p {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 400;
   opacity: 80%;
   margin-bottom: 2rem;
@@ -34,9 +25,10 @@
 
 .hero a:any-link {
   display: inline-block;
-  padding: 1rem 1rem;
+  padding: 0.75rem 1rem;
   white-space: nowrap;
   border-radius: 3rem;
+  font-family: "Ubuntu", sans-serif;
   font-weight: 700;
   text-decoration: none;
   width: 14ch;
@@ -62,4 +54,18 @@
 .hero a:last-of-type:hover {
   color: var(--gradient-light-red);
   background-color: white;
+}
+
+@media (min-width: 600px) {
+  .hero {
+    background: url("../../images/bg-pattern-intro-desktop.svg"),
+      linear-gradient(90deg, var(--gradient-very-light-red) 0%, var(--gradient-light-red) 100%);
+    background-position: 27% 52%;
+    background-size: unset;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
 }
