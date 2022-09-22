@@ -43,8 +43,16 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - Grid
+- React Components
+- Astro
 
 ### What I learned
+
+The positioning on a lot of the images on this page were tricky. Did my best to have them positioned correctly for the 1440 resolution, but the method used isn't too friendly for responsiveness. Lots of learning done with grid and how to place elements.
+
+The dropdown menus taught me more about listeners and listening for clicks outside of an element to close the dropdown menu.
+
+Learned how to use astro as well, that was interesting and added some overhead to the challenge. Came up against a few framework quirks like adding multiline text and that css is only scoped automatically to the component when used within the style tag. Putting the styles in a separate file doesn't work unfortunately.
 
 ## Author
 

@@ -39,12 +39,12 @@ export default function Navigation() {
     <header>
       <nav aria-label="top">
         <a href="#" aria-label="Blogr Home Page">
-          <img src="../../images/logo.svg" alt="" />
+          <img src="./images/logo.svg" alt="" />
         </a>
         <button className={styles.hamburger} onClick={() => setMenuOpen((prev) => !prev)}>
           <span className="sr-only">Open main menu</span>
           <img
-            src={menuOpen ? "../../images/icon-close.svg" : "../../images/icon-hamburger.svg"}
+            src={menuOpen ? "./images/icon-close.svg" : "./images/icon-hamburger.svg"}
             alt=""
             aria-hidden="true"
           />
