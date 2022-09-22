@@ -34,7 +34,7 @@
 }
 
 .footer-links li {
-  padding: 0.25rem;
+  padding: 0.25rem 0;
 }
 
 .footer-links a:any-link {
@@ -44,4 +44,44 @@
 
 .footer-links a:hover {
   text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+  .footer {
+    grid-template-columns:
+      [full-start] minmax(1rem, 1fr)
+      [main-start] minmax(0, var(--max-width))
+      [main-end] minmax(1rem, 1fr)
+      [full-end];
+    text-align: left;
+  }
+
+  .footer-container {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 6rem 0;
+  }
+
+  .footer-container img {
+    justify-self: left;
+    margin: 0;
+  }
+
+  .footer-links {
+    margin: 0;
+  }
+
+  .footer-links span {
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .footer-links ul {
+    margin-bottom: 0;
+  }
+
+  .footer-links li {
+    padding: 0.5rem 0;
+  }
 }

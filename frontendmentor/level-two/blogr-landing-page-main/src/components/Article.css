@@ -60,6 +60,12 @@
     grid-template-rows: 1fr 1fr 1fr 1fr;
   }
 
+  .article h1,
+  .article h2,
+  .article p {
+    padding: 0;
+  }
+
   .article h1 {
     grid-column: 1/3;
     grid-row: 1/2;

@@ -56,7 +56,7 @@
         var(--gradient-very-dark-desaturated-blue) 0%,
         var(--gradient-very-dark-gray-blue) 100%
       );
-    background-position: left 10% bottom 20%, center;
+    background-position: left -50% bottom 20%, center;
     background-repeat: no-repeat;
   }
 
@@ -82,7 +82,7 @@
   .container img {
     position: absolute;
     top: -4rem;
-    left: -1rem;
+    left: -3rem;
     transform: unset;
   }
 
