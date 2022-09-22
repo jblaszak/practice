@@ -38,5 +38,56 @@
 
 .callout img {
   position: absolute;
+  top: 15%;
   transform: translateY(-75vw);
+}
+
+@media (min-width: 600px) {
+  .callout {
+    grid-template-columns:
+      [full-start] minmax(1rem, 1fr)
+      [main-start] minmax(0, var(--max-width))
+      [main-end] minmax(1rem, 1fr)
+      [full-end];
+    text-align: left;
+    background: url("../../images/bg-pattern-circles.svg"),
+      linear-gradient(
+        270deg,
+        var(--gradient-very-dark-desaturated-blue) 0%,
+        var(--gradient-very-dark-gray-blue) 100%
+      );
+    background-position: left 10% bottom 20%, center;
+    background-repeat: no-repeat;
+    /* margin: ; */
+  }
+
+  .callout h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  .container {
+    display: grid;
+    position: relative;
+    grid-area: main;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "unused text";
+  }
+
+  .container div {
+    margin: 8rem 0 8rem 2rem;
+    grid-area: text;
+    align-self: center;
+  }
+
+  .container img {
+    position: absolute;
+    top: -4rem;
+    left: -1rem;
+    transform: unset;
+  }
+
+  .container p {
+    margin: 0.5rem 0 0 0;
+  }
 }
