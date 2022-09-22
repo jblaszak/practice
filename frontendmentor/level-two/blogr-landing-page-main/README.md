@@ -57,6 +57,6 @@ Learned how to use astro as well, that was interesting and added some overhead t
 ## Author
 
 - Frontend Mentor - [@jblaszak](https://www.frontendmentor.io/profile/jblaszak)
-- Twitter - [@jblaszak](https://www.twitter.com/jblaszak)
+- Twitter - [@jo_blaszak](https://www.twitter.com/jo_blaszak)
 
 ## Acknowledgements
