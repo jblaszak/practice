@@ -53,6 +53,6 @@ Also realized that for a landing page with many components like this, it starts 
 ## Author
 
 - Frontend Mentor - [@jblaszak](https://www.frontendmentor.io/profile/jblaszak)
-- Twitter - [@jblaszak](https://www.twitter.com/jblaszak)
+- Twitter - [@jo_blaszak](https://www.twitter.com/jo_blaszak)
 
 ## Acknowledgements

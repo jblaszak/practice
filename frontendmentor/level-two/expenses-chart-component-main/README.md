@@ -1,18 +1,18 @@
 # Frontend Mentor - Expenses chart component solution
 
-This is a solution to the [Expenses chart component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/expenses-chart-component-e7yJBUdjwt). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Expenses chart component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/expenses-chart-component-e7yJBUdjwt). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
-  - [Overview](#overview)
-    - [The Challenge](#the-challenge);
-    - [Screenshot](#screenshot)
-    - [Links](#links)
-  - [My process](#my-process)
-    - [Built with](#built-with)
-    - [What I learned](#what-i-learned)
-  - [Author](#author)
-  - [Acknowledgements](#acknowledgements)
+- [Overview](#overview)
+  - [The Challenge](#the-challenge);
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Author](#author)
+- [Acknowledgements](#acknowledgements)
 
 ## Overview
 
@@ -49,11 +49,11 @@ Users should be able to:
 
 ### What I learned
 
-Cool project, started incorporating more javascript to make dynamic content and loading data from a local JSON file.  Used some filters to adjust brightness levels on hover.  Added classes and HTML elements to the DOM using JS.  Also learned more about CSS and specificity to target elements where class was added.
+Cool project, started incorporating more javascript to make dynamic content and loading data from a local JSON file. Used some filters to adjust brightness levels on hover. Added classes and HTML elements to the DOM using JS. Also learned more about CSS and specificity to target elements where class was added.
 
 ## Author
 
 - Frontend Mentor - [@jblaszak](https://www.frontendmentor.io/profile/jblaszak)
-- Twitter - [@jblaszak](https://www.twitter.com/jblaszak)
+- Twitter - [@jo_blaszak](https://www.twitter.com/jo_blaszak)
 
 ## Acknowledgements

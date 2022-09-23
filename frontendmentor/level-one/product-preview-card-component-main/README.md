@@ -1,6 +1,6 @@
 # Frontend Mentor - Product preview card component solution
 
-This is a solution to the [Product preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-preview-card-component-GO7UmttRfa). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Product preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-preview-card-component-GO7UmttRfa). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -15,7 +15,6 @@ This is a solution to the [Product preview card component challenge on Frontend 
     - [What I learned](#what-i-learned)
   - [Author](#author)
   - [Acknowledgements](#acknowledgements)
-
 
 ## Overview
 
@@ -50,6 +49,7 @@ Users should be able to:
 This project was great to review working with loading google fonts and rendering different layouts based on different screen sizes.
 
 A couple other things I learned:
+
 - Preventing grid blowout
 - Transforming text to all caps using CSS
 - Letter spacing (I had wrongly thought to use kerning)
@@ -57,7 +57,7 @@ A couple other things I learned:
 ## Author
 
 - Frontend Mentor - [@jblaszak](https://www.frontendmentor.io/profile/jblaszak)
-- Twitter - [@jblaszak](https://www.twitter.com/jblaszak)
+- Twitter - [@jo_blaszak](https://www.twitter.com/jo_blaszak)
 
 ## Acknowledgements
 

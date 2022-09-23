@@ -1,6 +1,6 @@
 # Frontend Mentor - Profile card component solution
 
-This is a solution to the [Profile card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Profile card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -14,7 +14,6 @@ This is a solution to the [Profile card component challenge on Frontend Mentor](
     - [What I learned](#what-i-learned)
   - [Author](#author)
   - [Acknowledgements](#acknowledgements)
-
 
 ## Overview
 
@@ -39,18 +38,19 @@ This is a solution to the [Profile card component challenge on Frontend Mentor](
 
 ### What I learned
 
-This was a fun one. Using multiple backgrounds was new for me. It was more involved/challenging than the previous components, which was nice! 
-Had to use transformsfor position and box shadows as well! Had difficulty with the overall page background positioning. Looked at some other solutions for it and found a way that worked.  Also learned that 
-the CSS reset for img's was messing up the expected behaviour!  Had to reset this to 'initial'!
-``` css
+This was a fun one. Using multiple backgrounds was new for me. It was more involved/challenging than the previous components, which was nice!
+Had to use transformsfor position and box shadows as well! Had difficulty with the overall page background positioning. Looked at some other solutions for it and found a way that worked. Also learned that
+the CSS reset for img's was messing up the expected behaviour! Had to reset this to 'initial'!
+
+```css
 img {
   max-width: 100%;
-} 
+}
 ```
 
 ## Author
 
 - Frontend Mentor - [@jblaszak](https://www.frontendmentor.io/profile/jblaszak)
-- Twitter - [@jblaszak](https://www.twitter.com/jblaszak)
+- Twitter - [@jo_blaszak](https://www.twitter.com/jo_blaszak)
 
 ## Acknowledgements
