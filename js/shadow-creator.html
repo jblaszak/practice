@@ -13,26 +13,26 @@
       <article>
         <h1>Move the sliders and the joystick to create your shadow!</h1>
         <div class="options">
-          <div class="joystick-container">
-            <div class="joystick"></div>
+          <div class="joystick-container" id="joystick-container">
+            <div class="joystick" id="joystick" draggable="true"></div>
           </div>
-          <div class="inputs">
+          <div class="inputs" id="inputs">
             <label>
               <input type="range" id="blur" name="blur" min="0" max="30" step="1" value="0" />
               Blur (px)
             </label>
             <label>
               <input type="range" id="spread" name="spread" min="0" max="30" step="1" value="0" />
-              spread
+              Spread (px)
             </label>
             <label>
-              <input type="color" name="color" value="#000000" />
+              <input type="color" id="color" name="color" value="#000000" />
               Color
             </label>
           </div>
         </div>
-        <div class="preview">PREVIEW</div>
-        <p class="output"></p>
+        <div class="preview" id="preview">PREVIEW</div>
+        <p class="output" id="output"></p>
       </article>
     </main>
   </body>
