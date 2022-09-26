@@ -1,0 +1,73 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  place-content: center;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  margin: 4rem 0;
+}
+
+.options {
+  display: flex;
+  justify-content: space-around;
+}
+
+.joystick-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: lightgrey;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.joystick {
+  position: absolute;
+  top: 85px;
+  left: 85px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: darkgrey;
+  border: 1px solid black;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inputs label {
+  margin: 1rem 0;
+}
+
+.preview {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  background-color: lightgrey;
+  display: grid;
+  place-content: center;
+  font-weight: 700;
+  align-self: center;
+  margin: 4rem 0;
+}
+
+.output {
+  background-color: beige;
+  padding: 1rem;
+  border-radius: 10px;
+}
