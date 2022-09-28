@@ -7,26 +7,20 @@ const color = document.getElementById("color");
 const preview = document.getElementById("preview");
 const output = document.getElementById("output");
 
-const minX = joystickContainer.clientLeft;
+const minX = joystickContainer.offsetLeft;
 const maxX = minX + joystickContainer.clientWidth - joystick.clientWidth;
-const minY = joystickContainer.clientTop;
-const maxY = minY + joystickContainer.clientHeight - joystick.clientWidth;
+const minY = joystickContainer.offsetTop;
+const maxY = minY + joystickContainer.clientHeight - joystick.clientHeight;
 
-console.log(joystick.clientTop);
-console.log(joystick.clientLeft);
-console.log(joystick);
-
-console.log("minX", minX, "maxX", maxX, "minY", minY, "maxY", maxY);
+const joystickXInit = (minX + maxX) / 2 - minX;
+const joystickYInit = (minY + maxY) / 2 - minY;
+let joystickX = joystickXInit;
+let joystickY = joystickYInit;
 
 const onChangeInput = () => {
-  //   if (e) {
-  //     e.preventDefault();
-  //   }
-
-  const joystickX = 5;
-  const joystickY = 5;
-
-  const shadow = `${joystickX}px ${joystickY}px ${blur.value}px ${spread.value}px ${color.value}`;
+  const shadow = `${joystickX - joystickXInit}px ${joystickY - joystickYInit}px ${blur.value}px ${
+    spread.value
+  }px ${color.value}`;
   output.textContent = `box-shadow: ${shadow};`;
   preview.style.boxShadow = shadow;
 };
@@ -37,12 +31,22 @@ document.addEventListener("mousemove", (e) => {
   }
 });
 
-joystick.addEventListener("drag", (e) => {
-  console.log(e);
-});
-joystickContainer.addEventListener("drop", (e) => {
-  console.log("dropped");
-});
-joystickContainer.addEventListener("dragover", (e) => {
+const moveJoystick = (e) => {
   e.preventDefault();
+  joystickX = e.clientX <= minX ? -1 : e.clientX > maxX ? maxX - minX - 1 : e.clientX - minX;
+  joystickY = e.clientY <= minY ? -1 : e.clientY > maxY ? maxY - minY - 1 : e.clientY - minY;
+
+  joystick.style.left = `${joystickX}px`;
+  joystick.style.top = `${joystickY}px`;
+};
+
+joystick.addEventListener("mousedown", (e) => {
+  e.preventDefault();
+  joystick.style.cursor = "all-scroll";
+  document.addEventListener("mousemove", moveJoystick);
+});
+
+document.addEventListener("mouseup", (e) => {
+  joystick.style.cursor = "pointer";
+  document.removeEventListener("mousemove", moveJoystick);
 });

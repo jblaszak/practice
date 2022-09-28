@@ -55,6 +55,10 @@ h1 {
   margin: 1rem 0;
 }
 
+.inputs input {
+  width: 200px;
+}
+
 .preview {
   width: 200px;
   height: 200px;
