@@ -12,6 +12,20 @@ body {
   text-align: center;
 }
 
+button {
+  font-size: 1.25rem;
+  font-weight: 700rem;
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border: 2px solid lightblue;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: beige;
+}
+
 header {
   font-size: 1.5rem;
   margin: 1rem;
@@ -43,18 +57,20 @@ header {
   grid-area: 1/1;
   font-size: 1.75rem;
   padding: 1rem;
+  text-transform: uppercase;
 }
 
 .answers input {
   grid-area: 1/1;
   appearance: none;
   border: 1px solid lightgrey;
+  cursor: pointer;
 }
 
 .answers input:hover {
-  border: 2px solid rgb(200, 130, 0);
+  border: 2px solid rgb(249, 192, 86);
 }
 
 .answers input:checked {
-  border: 2px solid red;
+  border: 2px solid green;
 }
