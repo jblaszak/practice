@@ -1,26 +1,50 @@
 let sequences;
 let usedSequences;
 let guesses;
+
 const entry = document.getElementById("entry");
 const form = document.getElementById("answer-form");
 const result = document.getElementById("result");
 const startButton = document.getElementById("start");
+const delay = document.getElementById("delay");
+const characters = document.getElementById("characters");
+const controls = document.getElementById("controls");
+const instructions = document.getElementById("instructions");
+
+let interval;
+
+const updateInstructions = () => {
+  instructions.textContent = `You have ${delay.value} ${
+    +delay.value === 1 ? "second" : "seconds"
+  } to remember each ${characters.value} character sequence!`;
+};
 
 const start = () => {
   sequences = [];
   usedSequences = [];
   guesses = [];
   result.textContent = "";
+  startButton.textContent = "Restart Test";
+  fillAnswers(false);
+  clearInterval(interval);
 
   while (sequences.length < 20) {
-    // Generate new 3 digit hexadecimal number
-    const newSequence = Math.floor(Math.random() * 4096)
+    // Generate new N digit hexadecimal number
+    const newSequence = Math.floor(Math.random() * 16 ** characters.value)
       .toString(16)
-      .padStart(3, "0");
+      .padStart(characters.value, "0");
     if (!sequences.includes(newSequence)) {
       sequences.push(newSequence);
     }
   }
+
+  const getSequence = () => {
+    const entryIndex = Math.floor(Math.random() * sequences.length);
+    if (usedSequences.includes(sequences[entryIndex])) {
+      return getSequence();
+    }
+    return sequences[entryIndex];
+  };
 
   let newSequence = getSequence();
   usedSequences.push(newSequence);
@@ -28,16 +52,8 @@ const start = () => {
 
   let intervalCount = 1;
 
-  const interval = setInterval(() => {
+  interval = setInterval(() => {
     intervalCount++;
-
-    const getSequence = () => {
-      const entryIndex = Math.floor(Math.random() * sequences.length);
-      if (usedSequences.includes(sequences[entryIndex])) {
-        return getSequence();
-      }
-      return sequences[entryIndex];
-    };
 
     if (intervalCount < 6) {
       newSequence = getSequence();
@@ -48,11 +64,18 @@ const start = () => {
       clearInterval(interval);
       fillAnswers();
     }
-  }, 4000);
+  }, +delay.value * 1000);
 };
 
-const fillAnswers = () => {
+const fillAnswers = (filled = true) => {
   const answerList = document.getElementById("answer-list");
+  if (!filled) {
+    for (let i = 0; i < answerList.children.length; i++) {
+      answerList.children[i].children[0].textContent = "\xa0";
+    }
+    return;
+  }
+
   for (let i = 0; i < answerList.children.length; i++) {
     answerList.children[i].children[0].textContent = sequences[i];
     answerList.children[i].children[1].name = sequences[i];
@@ -73,3 +96,6 @@ const checkAnswers = (e) => {
 
 form.addEventListener("submit", checkAnswers);
 startButton.addEventListener("click", start);
+controls.addEventListener("change", updateInstructions);
+
+updateInstructions();

@@ -27,12 +27,57 @@ button:hover {
 }
 
 header {
-  font-size: 1.5rem;
   margin: 2rem 0 1rem 0;
 }
 
 header h1 {
+  font-size: 2.5rem;
   margin: 0;
+}
+
+.controls {
+  display: grid;
+  margin: 0 auto;
+  width: 350px;
+}
+
+.controls label {
+  display: flex;
+  align-content: center;
+}
+
+.controls label:first-child {
+  grid-area: 1/1;
+  align-self: start;
+}
+
+.controls label:nth-child(2) {
+  grid-area: 1/1;
+  align-self: end;
+}
+
+.controls input {
+  max-width: 110px;
+}
+
+@media (min-width: 600px) {
+  .controls {
+    width: 500px;
+  }
+  .controls input {
+    max-width: 250px;
+    width: 250px;
+  }
+}
+
+.controls button {
+  grid-area: 1/1;
+  width: fit-content;
+  justify-self: end;
+}
+
+.controls input {
+  cursor: pointer;
 }
 
 .entries {
@@ -49,9 +94,11 @@ header h1 {
 }
 
 .answers ul {
+  padding-left: 0;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  margin: 1rem;
 }
 
 .answers li {

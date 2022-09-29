@@ -14,8 +14,12 @@
     </header>
     <main>
       <article>
-        <h2>You have 4 seconds to remember each sequence!</h2>
-        <button id="start">Start Test</button>
+        <h2 id="instructions"></h2>
+        <section class="controls" id="controls">
+          <label><input type="range" id="delay" min="1" max="10" value="4" />Timer</label>
+          <label><input type="range" id="characters" min="2" max="6" value="3" />Characters</label>
+          <button id="start">Start Test</button>
+        </section>
         <section class="entries">
           <h3>Best of luck!</h3>
           <p id="entry">&nbsp;</p>
