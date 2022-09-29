@@ -10,6 +10,10 @@ const delay = document.getElementById("delay");
 const characters = document.getElementById("characters");
 const controls = document.getElementById("controls");
 const instructions = document.getElementById("instructions");
+const resultSection = document.getElementsByClassName("results")[0];
+const entrySection = document.getElementsByClassName("entries")[0];
+const answerSection = document.getElementById("answers");
+const error = document.getElementById("error");
 
 let interval;
 
@@ -27,6 +31,11 @@ const start = () => {
   startButton.textContent = "Restart Test";
   fillAnswers(false);
   clearInterval(interval);
+
+  answerSection.classList.add("hidden");
+  error.classList.add("hidden");
+  resultSection.classList.add("hidden");
+  entrySection.classList.remove("hidden");
 
   while (sequences.length < 20) {
     // Generate new N digit hexadecimal number
@@ -61,6 +70,8 @@ const start = () => {
       entry.textContent = newSequence;
     } else {
       entry.textContent = "\xa0";
+      answerSection.classList.remove("hidden");
+      entrySection.classList.add("hidden");
       clearInterval(interval);
       fillAnswers();
     }
@@ -72,6 +83,7 @@ const fillAnswers = (filled = true) => {
   if (!filled) {
     for (let i = 0; i < answerList.children.length; i++) {
       answerList.children[i].children[0].textContent = "\xa0";
+      answerList.children[i].children[1].checked = false;
     }
     return;
   }
@@ -87,11 +99,19 @@ const checkAnswers = (e) => {
   const formValues = [...new FormData(form).entries()];
   const answers = formValues.map((entry) => entry[0]);
 
-  const numCorrect = answers.reduce((acc, curr) => {
-    return acc + usedSequences.includes(curr);
-  }, 0);
-
-  result.textContent = `You got ${numCorrect} / 5 correct!`;
+  // only do stuff if no blank entries
+  if (!!answers.length) {
+    if (answers.length > 5) {
+      error.classList.remove("hidden");
+    } else {
+      const numCorrect = answers.reduce((acc, curr) => {
+        return acc + usedSequences.includes(curr);
+      }, 0);
+      error.classList.add("hidden");
+      resultSection.classList.remove("hidden");
+      result.textContent = `You got ${numCorrect} / 5 correct!`;
+    }
+  }
 };
 
 form.addEventListener("submit", checkAnswers);

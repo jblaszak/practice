@@ -126,3 +126,11 @@ header h1 {
 .answers input:checked {
   border: 2px solid green;
 }
+
+#error {
+  color: red;
+}
+
+.hidden {
+  display: none;
+}
