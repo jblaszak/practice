@@ -1,0 +1,60 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  place-content: center;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+header {
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+.entries {
+  display: grid;
+  place-content: center;
+}
+
+.entries p {
+  padding: 1rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  border: 1px solid lightgray;
+}
+
+.answers ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.answers li {
+  display: grid;
+}
+
+.answers label {
+  grid-area: 1/1;
+  font-size: 1.75rem;
+  padding: 1rem;
+}
+
+.answers input {
+  grid-area: 1/1;
+  appearance: none;
+  border: 1px solid lightgrey;
+}
+
+.answers input:hover {
+  border: 2px solid rgb(200, 130, 0);
+}
+
+.answers input:checked {
+  border: 2px solid red;
+}
