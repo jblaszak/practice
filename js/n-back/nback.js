@@ -1,4 +1,7 @@
 let n = 2;
+let currAnswer = -1;
+let fastPause = 500;
+let slowPause = 500;
 const images = [
   "./images/rectangle.svg",
   "./images/circle.svg",
@@ -9,7 +12,6 @@ const images = [
   "./images/swirl.svg",
   "./images/triangle.svg",
 ];
-
 const sounds = [
   "./sounds/a.mp3",
   "./sounds/b.mp3",
@@ -20,6 +22,10 @@ const sounds = [
   "./sounds/o.mp3",
   "./sounds/r.mp3",
 ];
+
+const playableSounds = sounds.map((sound) => new Audio(sound));
+
+const items = document.getElementsByClassName("item");
 
 const answers = genAnswers();
 
@@ -54,7 +60,7 @@ function genAnswers() {
     const visualMatch =
       !emptyMatch(position, "visual") && answerList[position][0] === answerList[position + n][0];
     if (emptyMatch(position, "audio") && !visualMatch) {
-      const audio = sounds[Math.floor(Math.random() * 8)];
+      const audio = playableSounds[Math.floor(Math.random() * 8)];
       answerList[position][1] = audio;
       answerList[position + n][1] = audio;
       audioCount++;
@@ -66,7 +72,7 @@ function genAnswers() {
     const position = Math.floor(Math.random() * 20);
     if (emptyMatch(position, "visual") && emptyMatch(position, "audio")) {
       const visual = Math.floor(Math.random() * 8);
-      const audio = sounds[Math.floor(Math.random() * 8)];
+      const audio = playableSounds[Math.floor(Math.random() * 8)];
 
       // check if n-back or 2n-forward is match for either
       const nBackVisualMatch = answerList?.[position - n]?.[0] === visual;
@@ -98,7 +104,7 @@ function genAnswers() {
         answerList[index][0] = visual;
       }
       if (answerList[index][1] == null) {
-        const audio = sounds[Math.floor(Math.random() * 8)];
+        const audio = playableSounds[Math.floor(Math.random() * 8)];
         if (answerList?.[index - n]?.[1] === audio || answerList?.[index + n]?.[1] === audio)
           continue;
         answerList[index][1] = audio;
@@ -110,4 +116,24 @@ function genAnswers() {
   return answerList;
 }
 
-console.log(answers);
+function cycleAnswers() {
+  slowTimerId = setInterval(() => {
+    currAnswer++;
+    if (currAnswer < answers.length) {
+      const answer = answers[currAnswer];
+      const originalColor = items[answer[0]].style.backgroundColor;
+      items[answer[0]].style.backgroundColor = "transparent";
+      items[answer[0]].style.backgroundImage = "url('./images/rectangle.svg')";
+      answer[1].play();
+
+      fastTimerId = setTimeout(() => {
+        items[answer[0]].style.backgroundColor = originalColor;
+        items[answer[0]].style.backgroundImage = "";
+      }, fastPause);
+    } else {
+      clearInterval(slowTimerId);
+    }
+  }, slowPause + fastPause);
+}
+
+cycleAnswers();

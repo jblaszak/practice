@@ -17,12 +17,12 @@ The original test involves the following:
 
 ## Task List
 
-[ ] - generation of enough trials matching above requirements
-[ ] - layout of shapes based on number
-[ ] - playing of sounds based on number
-[ ] - timing and switching of trials
+[✅] - generation of enough trials matching above requirements
+[✅] - layout of shapes based on number
+[✅] - playing of sounds based on number
+[✅] - timing and switching of trials
 [ ] - accepting/handling user input
-[ ] - limit to once per trial, per modality
+[ ] - limit inputs to once per trial, per modality
 [ ] - accept button input
 [ ] - accept keyboard input
 [ ] - keeping track of 'score'
