@@ -17,21 +17,21 @@ The original test involves the following:
 
 ## Task List
 
-[✅] - generation of enough trials matching above requirements
-[✅] - layout of shapes based on number
-[✅] - playing of sounds based on number
-[✅] - timing and switching of trials
-[ ] - accepting/handling user input
-[ ] - limit inputs to once per trial, per modality
-[ ] - accept button input
-[ ] - accept keyboard input
-[ ] - keeping track of 'score'
-[ ] - score page
+[✅] - generation of enough trials matching above requirements  
+[✅] - layout of shapes based on number  
+[✅] - playing of sounds based on number  
+[✅] - timing and switching of trials  
+[ ] - accepting/handling user input  
+[ ] - limit inputs to once per trial, per modality  
+[ ] - accept button input  
+[ ] - accept keyboard input  
+[ ] - keeping track of 'score'  
+[ ] - score page  
 [ ] - start/restart functionality
 
 Nice to haves:
-[ ] - more modalities including shape
-[ ] - score history using browser storage
-[ ] - score history charts
-[ ] - cleaning up styles to look fancy
+[ ] - more modalities including shape  
+[ ] - score history using browser storage  
+[ ] - score history charts  
+[ ] - cleaning up styles to look fancy  
 [ ] - responsive design
