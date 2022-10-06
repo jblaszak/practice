@@ -2,6 +2,7 @@ let n = 2;
 let currAnswer = -1;
 let fastPause = 500;
 let slowPause = 500;
+
 const images = [
   "./images/rectangle.svg",
   "./images/circle.svg",
@@ -23,11 +24,44 @@ const sounds = [
   "./sounds/r.mp3",
 ];
 
+let currSubmission = [null, null];
+const submittedAnswers = [];
+
 const playableSounds = sounds.map((sound) => new Audio(sound));
 
 const items = document.getElementsByClassName("item");
+const nContainer = document.querySelector("h1");
+const positionButton = document.getElementById("position");
+const soundButton = document.getElementById("sound");
 
 const answers = genAnswers();
+
+positionButton.addEventListener("click", submitPosition);
+soundButton.addEventListener("click", submitSound);
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowLeft") submitPosition();
+  if (e.key === "ArrowRight") submitSound();
+});
+
+function submitPosition(e) {
+  // only take first answer for this question
+  if (currSubmission[0] == null) {
+    currSubmission[0] = answers[currAnswer][0] === answers?.[currAnswer - 2]?.[0];
+  }
+}
+
+function submitSound(e) {
+  // only take first answer for this question
+  if (currSubmission[1] == null) {
+    currSubmission[1] = answers[currAnswer][1] === answers?.[currAnswer - 2]?.[1];
+  }
+}
+
+function setN(newN) {
+  nContainer.textContent = `N = ${newN}`;
+  n = newN;
+}
 
 function genAnswers() {
   // 6 visual, 6 audio, 2 with both
@@ -119,6 +153,10 @@ function genAnswers() {
 function cycleAnswers() {
   slowTimerId = setInterval(() => {
     currAnswer++;
+    if (currAnswer > 0) {
+      submittedAnswers.push(currSubmission);
+      currSubmission = [null, null];
+    }
     if (currAnswer < answers.length) {
       const answer = answers[currAnswer];
       const originalColor = items[answer[0]].style.backgroundColor;
@@ -132,6 +170,7 @@ function cycleAnswers() {
       }, fastPause);
     } else {
       clearInterval(slowTimerId);
+      console.log(submittedAnswers);
     }
   }, slowPause + fastPause);
 }

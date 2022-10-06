@@ -21,15 +21,15 @@ The original test involves the following:
 [✅] - layout of shapes based on number  
 [✅] - playing of sounds based on number  
 [✅] - timing and switching of trials  
-[ ] - accepting/handling user input  
-[ ] - limit inputs to once per trial, per modality  
-[ ] - accept button input  
-[ ] - accept keyboard input  
-[ ] - keeping track of 'score'  
+[✅] - accepting/handling user input  
+[✅] - limit inputs to once per trial, per modality  
+[✅] - accept button input
+[✅] - accept keyboard input  
+[✅] - keeping track of 'score'  
 [ ] - score page  
 [ ] - start/restart functionality
 
-Nice to haves:
+Nice to haves:  
 [ ] - more modalities including shape  
 [ ] - score history using browser storage  
 [ ] - score history charts  
