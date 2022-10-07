@@ -25,14 +25,15 @@ The original test involves the following:
  [✅] - limit inputs to once per trial, per modality  
  [✅] - accept button input  
  [✅] - accept keyboard input  
- [] - output correct/wrong result  
+ [✅] - output correct/wrong result  
 [✅] - keeping track of 'score'  
-[ ] - score page  
-[ ] - start/restart functionality
+[✅] - score page  
+[✅] - start/restart functionality
+[✅] - increase/decrease level based on performance between rounds
 
 Nice to haves:  
 [ ] - more modalities including shape  
 [ ] - score history using browser storage  
 [ ] - score history charts  
 [ ] - cleaning up styles to look fancy  
-[ ] - responsive design
+[✅] - responsive design

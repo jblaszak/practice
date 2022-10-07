@@ -97,3 +97,16 @@ button:hover,
 button:active {
   filter: brightness(125%);
 }
+
+#start {
+  display: block;
+  margin: auto;
+}
+
+.score {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}

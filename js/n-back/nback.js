@@ -3,6 +3,13 @@ let currAnswer = -1;
 let fastPause = 500;
 let slowPause = 500;
 
+let answers;
+let currSubmission = [null, null];
+let submittedAnswers = [];
+
+let slowTimerId;
+let fastTimerId;
+
 const images = [
   "./images/rectangle.svg",
   "./images/circle.svg",
@@ -24,19 +31,18 @@ const sounds = [
   "./sounds/r.mp3",
 ];
 
-let currSubmission = [null, null];
-const submittedAnswers = [];
-
 const playableSounds = sounds.map((sound) => new Audio(sound));
 
 const nContainer = document.querySelector("h1");
+const startButton = document.getElementById("start");
 const items = document.getElementsByClassName("item");
 const result = document.getElementById("result");
 const positionButton = document.getElementById("position");
 const soundButton = document.getElementById("sound");
+const roundResults = document.getElementById("round-results");
+const score = document.getElementById("score");
 
-const answers = genAnswers();
-
+startButton.addEventListener("click", startGame);
 positionButton.addEventListener("click", submitPosition);
 soundButton.addEventListener("click", submitSound);
 
@@ -44,6 +50,19 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowLeft") submitPosition();
   if (e.key === "ArrowRight") submitSound();
 });
+
+function startGame() {
+  currAnswer = -1;
+  currSubmission = [null, null];
+  submittedAnswers = [];
+  clearInterval(slowTimerId);
+  clearTimeout(fastTimerId);
+  startButton.textContent = "Restart Game";
+  nContainer.textContent = `N = ${n}`;
+  score.classList.add("hidden");
+  answers = genAnswers();
+  cycleAnswers();
+}
 
 function submitPosition(e) {
   // only take first answer for this question
@@ -75,11 +94,6 @@ function updateResult(isCorrect) {
     anim.play();
   }
   result.textContent = isCorrect ? `Correct!` : `Incorrect!`;
-}
-
-function setN(newN) {
-  nContainer.textContent = `N = ${newN}`;
-  n = newN;
 }
 
 function genAnswers() {
@@ -189,9 +203,33 @@ function cycleAnswers() {
       }, fastPause);
     } else {
       clearInterval(slowTimerId);
-      console.log(submittedAnswers);
+      showResults();
     }
   }, slowPause + fastPause);
 }
 
-cycleAnswers();
+function showResults() {
+  let positionCorrect = 0;
+  let soundCorrect = 0;
+  let upgradeText = "";
+  for (let i = 0; i < submittedAnswers.length; i++) {
+    if (submittedAnswers[i][0]) positionCorrect++;
+    if (submittedAnswers[i][1]) soundCorrect++;
+  }
+
+  if (positionCorrect >= 4 && soundCorrect >= 4) {
+    n++;
+    upgradeText = ` Congrats, N is being increased by 1!`;
+  } else if (positionCorrect <= 1 || soundCorrect <= 1) {
+    if (n >= 3) {
+      n--;
+      upgradeText = ` Uh-oh! N is being decreased by 1!`;
+    } else {
+      upgradeText = ` Uh-oh! N is already at minimum!`;
+    }
+  }
+
+  score.classList.remove("hidden");
+  roundResults.textContent = `You got ${positionCorrect}/6 positions correct and ${soundCorrect}/6 sounds correct!${upgradeText}`;
+  startButton.textContent = "Start New Game";
+}
