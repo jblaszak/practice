@@ -29,8 +29,9 @@ const submittedAnswers = [];
 
 const playableSounds = sounds.map((sound) => new Audio(sound));
 
-const items = document.getElementsByClassName("item");
 const nContainer = document.querySelector("h1");
+const items = document.getElementsByClassName("item");
+const result = document.getElementById("result");
 const positionButton = document.getElementById("position");
 const soundButton = document.getElementById("sound");
 
@@ -46,16 +47,34 @@ document.addEventListener("keydown", (e) => {
 
 function submitPosition(e) {
   // only take first answer for this question
-  if (currSubmission[0] == null) {
+  if (currSubmission[0] == null && submittedAnswers.length < 20 + n) {
     currSubmission[0] = answers[currAnswer][0] === answers?.[currAnswer - 2]?.[0];
+    updateResult(currSubmission[0]);
   }
 }
 
 function submitSound(e) {
   // only take first answer for this question
-  if (currSubmission[1] == null) {
+  if (currSubmission[1] == null && submittedAnswers.length < 20 + n) {
     currSubmission[1] = answers[currAnswer][1] === answers?.[currAnswer - 2]?.[1];
+    updateResult(currSubmission[1]);
   }
+}
+
+function updateResult(isCorrect) {
+  if (isCorrect) {
+    result.classList.remove("incorrect");
+    result.classList.add("correct");
+  } else {
+    result.classList.remove("correct");
+    result.classList.add("incorrect");
+  }
+  const anim = result.getAnimations()?.[0];
+  if (anim) {
+    anim.cancel();
+    anim.play();
+  }
+  result.textContent = isCorrect ? `Correct!` : `Incorrect!`;
 }
 
 function setN(newN) {

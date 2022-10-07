@@ -57,6 +57,25 @@ article h1 {
   text-transform: uppercase;
 }
 
+.result.correct {
+  color: green;
+  animation: fade 1s 1s forwards ease-out;
+}
+
+.result.incorrect {
+  color: red;
+  animation: fade 1s 1s forwards ease-out;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .controls {
   grid-area: main;
   display: flex;
