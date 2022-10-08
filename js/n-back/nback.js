@@ -31,7 +31,7 @@ const sounds = [
   "./sounds/r.mp3",
 ];
 
-const playableSounds = sounds.map((sound) => new Audio(sound));
+let playableSounds;
 
 const nContainer = document.querySelector("h1");
 const startButton = document.getElementById("start");
@@ -52,6 +52,8 @@ document.addEventListener("keydown", (e) => {
 });
 
 function startGame() {
+  // iOS doesn't allow playing of sounds unless user interaction so we have to put creation of audio here
+  playableSounds = sounds.map((sound) => new Audio(sound));
   currAnswer = -1;
   currSubmission = [null, null];
   submittedAnswers = [];
