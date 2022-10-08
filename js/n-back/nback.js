@@ -1,7 +1,7 @@
 let n = 2;
 let currAnswer = -1;
 let fastPause = 500;
-let slowPause = 500;
+let slowPause = 2500;
 
 let answers;
 let currSubmission = [null, null];
