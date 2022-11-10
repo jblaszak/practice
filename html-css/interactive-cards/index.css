@@ -1,0 +1,22 @@
+body {
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  grid-gap: 2rem;
+}
+
+div {
+  border-radius: 1rem;
+  background: linear-gradient(lightblue 0%, darkblue 100%);
+  padding: 1rem;
+  color: white;
+}
+
+h1 {
+  margin: 0;
+}
