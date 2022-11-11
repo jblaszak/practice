@@ -115,6 +115,7 @@ header h1 {
 .answers input {
   grid-area: 1/1;
   appearance: none;
+  -webkit-appearance: none;
   border: 1px solid lightgrey;
   cursor: pointer;
 }
